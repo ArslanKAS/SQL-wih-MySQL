@@ -20,7 +20,7 @@ SELECT User, Host FROM mysql.user;
 CREATE USER 'someuser'@'localhost' IDENTIFIED BY 'somepassword';
 ```
 
-## Grant All Priveleges On All Databases
+## Grant All Privileges On All Databases
 
 ```sql
 GRANT ALL PRIVILEGES ON * . * TO 'someuser'@'localhost';
