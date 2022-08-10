@@ -214,9 +214,11 @@ UNIQUE (stuID, stuAGE)
 INSERT INTO school(stuID, stuNAME, stuAGE) VALUES (01, "Arslan", 30),(02, "Ali", 27),(03, "Sunila", DEFAULT);
 ```
 
-#### ASSIGN CONSTRAINT USING ALTER TABLE
+#### ASSIGN CONSTRAINT USING ALTER TABLE (Multiple Ways)
 ```sql
 ALTER TABLE school MODIFY stuAGE INT NOT NULL;
+```
+```sql
 ALTER TABLE school ADD UNIQUE (stuNAME);
 ```
 
@@ -230,12 +232,15 @@ PRIMARY KEY (stuID, stuAGE)
 );
 ```
 
-### REMOVE CONSTRAINTS
+#### REMOVE CONSTRAINTS (Multiple Ways)
 ```sql
 SHOW INDEX FROM school;
 ```
 ```sql
 ALTER TABLE school DROP PRIMARY KEY;
+```
+```sql
+ALTER TABLE school DROP INDEX stuID;
 ```
 ```sql
 DROP INDEX stuID ON school;
