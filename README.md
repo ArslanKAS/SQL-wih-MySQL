@@ -186,7 +186,7 @@ ALTER TABLE students DROP email;
 	<li><strong>INDEX:</strong> To speed up the querying process</li>
 </ul>
 
-### NOT NULL, UNIQUE, PRIMARY KEY
+#### NOT NULL, UNIQUE, PRIMARY KEY
 ```sql
 CREATE TABLE codanians(
 stuID INT,
@@ -200,7 +200,7 @@ PRIMARY KEY (stuID)
 INSERT INTO codanians(stuID, stuNAME, stuAGE) VALUES (01, "Arslan", 30),(02, "Ali", 27),(03, "Sunila", 24);
 ```
 
-## DEFAULT
+#### DEFAULT
 ```sql
 CREATE TABLE school(
 stuID INT,
