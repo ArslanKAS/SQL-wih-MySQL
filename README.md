@@ -217,6 +217,7 @@ INSERT INTO school(stuID, stuNAME, stuAGE) VALUES (01, "Arslan", 30),(02, "Ali",
 #### ASSIGN CONSTRAINT USING ALTER TABLE
 ```sql
 ALTER TABLE school MODIFY stuAGE INT NOT NULL;
+ALTER TABLE school ADD UNIQUE (stuNAME);
 ```
 
 #### COMPOUND PRIMARY KEY
@@ -227,6 +228,17 @@ stuNAME VARCHAR(100),
 stuAGE INT,
 PRIMARY KEY (stuID, stuAGE)
 );
+```
+
+### REMOVE CONSTRAINTS
+```sql
+SHOW INDEX FROM school;
+```
+```sql
+ALTER TABLE school DROP PRIMARY KEY;
+```
+```sql
+DROP INDEX stuID ON school;
 ```
 
 ## Order By (Sort)
