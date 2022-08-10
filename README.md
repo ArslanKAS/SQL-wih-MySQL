@@ -151,6 +151,12 @@ UPDATE students SET stuAGE = 30 WHERE stuID = 01;
 ALTER TABLE students ADD stuCOUNTRY TEXT;
 ```
 
+## Add New Column at a Specific Position
+
+```sql
+ALTER TABLE students ADD email VARCHAR(30) AFTER stuAGE;
+```
+
 ## Modify Column
 
 ```sql
@@ -161,6 +167,12 @@ ALTER TABLE students MODIFY COLUMN stuCOUNTRY VARCHAR(20);
 
 ```sql
 UPDATE students SET stuCOUNTRY = "Pakistan" WHERE stuAGE < 27;
+```
+
+## Delete Column
+
+```sql
+ALTER TABLE students DROP email;
 ```
 
 ## Order By (Sort)
