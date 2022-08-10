@@ -1,6 +1,7 @@
 # SQL Commands with MySQL (by Codanics)
 
 > SQL commands to interact with a MySQL database on Windows
+![SQL-Commands-Markdown Banner](https://user-images.githubusercontent.com/43797457/184001962-6461bc67-3062-4c17-9c2c-8eb2a1422d24.png)
 
 ## Login
 
