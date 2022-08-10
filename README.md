@@ -1,4 +1,4 @@
-# SQL Commands with MySQL
+# SQL Commands with MySQL (by Codanics)
 
 > SQL commands to interact with a MySQL database on Windows
 
