@@ -206,18 +206,22 @@ PRIMARY KEY (stuID)
 INSERT INTO codanians(stuID, stuNAME, stuAGE) VALUES (01, "Arslan", 30),(02, "Ali", 27),(03, "Sunila", 24);
 ```
 
-#### DEFAULT
+#### DEFAULT (A default value will be assigned to the column if we don't insert anything into it)
 ```sql
 CREATE TABLE school(
 stuID INT,
 stuNAME VARCHAR(100),
-stuAGE INT DEFAULT 0,
+stuAGE INT,
+stuCITY TEXT DEFAULT "Faisalabad"
 UNIQUE (stuID, stuAGE)
 );
 ```
 
 ```sql
-INSERT INTO school(stuID, stuNAME, stuAGE) VALUES (01, "Arslan", 30),(02, "Ali", 27),(03, "Sunila", DEFAULT);
+INSERT INTO school(stuID, stuNAME, stuAGE) VALUES (01, "Arslan", 30),(02, "Ali", 27),(03, "Sunila", 24);
+```
+```sql
+INSERT INTO school(stuID, stuNAME, stuAGE, stuCITY) VALUES (01, "Arslan", 30, "Lahore"),(02, "Ali", 27, "Islamabad"),(03, "Sunila", 24, DEFAULT);
 ```
 
 #### ASSIGN CONSTRAINT USING ALTER TABLE (Multiple Ways)
