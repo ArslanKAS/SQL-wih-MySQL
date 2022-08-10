@@ -214,6 +214,21 @@ UNIQUE (stuID, stuAGE)
 INSERT INTO school(stuID, stuNAME, stuAGE) VALUES (01, "Arslan", 30),(02, "Ali", 27),(03, "Sunila", DEFAULT);
 ```
 
+#### ASSIGN CONSTRAINT USING ALTER TABLE
+```sql
+ALTER TABLE school MODIFY stuAGE INT NOT NULL;
+```
+
+#### COMPOUND PRIMARY KEY
+```sql
+CREATE TABLE school(
+stuID INT,
+stuNAME VARCHAR(100),
+stuAGE INT,
+PRIMARY KEY (stuID, stuAGE)
+);
+```
+
 ## Order By (Sort)
 
 ```sql
