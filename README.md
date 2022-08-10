@@ -175,6 +175,29 @@ UPDATE students SET stuCOUNTRY = "Pakistan" WHERE stuAGE < 27;
 ALTER TABLE students DROP email;
 ```
 
+## CONSTRAINTS
+### NOT NULL
+### UNIQUE
+### PRIMARY KEY
+### FOREIGN KEY
+### CHECK
+### DEFAULT
+### INDEX
+
+
+```sql
+CREATE TABLE codanians(
+stuID INT,
+stuNAME VARCHAR(100) UNIQUE,
+stuAGE INT NOT NULL,
+PRIMARY KEY (stuID)
+);
+```
+
+```sql
+INSERT INTO codanians(stuID, stuNAME, stuAGE) VALUES (01, "Arslan", 30),(02, "Ali", 27),(03, "Sunila", 24);
+```
+
 ## Order By (Sort)
 
 ```sql
