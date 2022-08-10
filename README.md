@@ -304,6 +304,12 @@ CHECK (stuAGE >= 18 AND stuCITY IN ("FAISALBAD","LAHORE","SARGODHA"))
 );
 ```
 
+#### INDEX (To speed up the query)
+```sql
+CREATE INDEX uni_index ON punjab_uni (stuID);
+SHOW INDEX FROM punjab_uni;
+```
+
 ## Order By (Sort)
 
 ```sql
