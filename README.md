@@ -256,6 +256,20 @@ ALTER TABLE school DROP INDEX stuID;
 DROP INDEX stuID ON school;
 ```
 
+#### FOREIGN KEY
+```sql
+CREATE TABLE college(
+stuID INT,
+schID INT,
+stuNAME VARCHAR(100),
+stuAGE INT,
+PRIMARY KEY (stuID),
+FOREIGN KEY (schID) REFERENCES school(stuID)
+);
+```
+```sql
+INSERT INTO college(stuID, stuNAME, stuAGE) VALUES (01, "Minhas", 30),(02, "Dawood", 27),(03, "Sunila", 24),(04, "Sami", 25), (05, "Zeeshan", 27), (06, "Hamza", 25);
+```
 ## Order By (Sort)
 
 ```sql
