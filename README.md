@@ -46,6 +46,12 @@ REVOKE ALL PRIVILEGES, GRANT OPTION FROM 'someuser'@'localhost';
 DROP USER 'someuser'@'localhost';
 ```
 
+## Clear Screen
+
+```sql
+\! cls;
+```
+
 ## Exit
 
 ```sql
@@ -256,7 +262,7 @@ ALTER TABLE school DROP INDEX stuID;
 DROP INDEX stuID ON school;
 ```
 
-#### FOREIGN KEY (RELATING COLLEGE TO SCHOOL TABLE)
+#### FOREIGN KEY (Relating College to School Table)
 ```sql
 CREATE TABLE college(
 Id INT,
@@ -270,6 +276,18 @@ FOREIGN KEY (schID) REFERENCES school(stuID)
 ```sql
 INSERT INTO college(Id, name, age) VALUES (01, "Minhas", 30),(02, "Dawood", 27),(03, "Sunila", 24),(04, "Sami", 25), (05, "Zeeshan", 27), (06, "Hamza", 25);
 ```
+
+#### CHECK (Adding condition that only Adults data can be inserted)
+```sql
+CREATE TABLE university(
+stuID INT,
+stuNAME VARCHAR(100),
+stuAGE INT,
+PRIMARY KEY (stuID),
+CHECK (stuAGE >= 18)
+);
+```
+
 ## Order By (Sort)
 
 ```sql
