@@ -288,6 +288,18 @@ CHECK (stuAGE >= 18)
 );
 ```
 
+#### CHECK ON MULTIPLE COLUMNS
+```sql
+CREATE TABLE punjab_uni(
+stuID INT,
+stuNAME VARCHAR(100),
+stuAGE INT,
+stuCITY VARCHAR(100),
+PRIMARY KEY (stuID),
+CHECK (stuAGE >= 18 AND stuCITY IN ("FAISALBAD","LAHORE","SARGODHA"))
+);
+```
+
 ## Order By (Sort)
 
 ```sql
