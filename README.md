@@ -232,6 +232,16 @@ PRIMARY KEY (stuID, stuAGE)
 );
 ```
 
+#### ASSIGN CONSTRAINTS (Another Method)
+```sql
+CREATE TABLE school(
+stuID INT,
+stuNAME VARCHAR(100),
+stuAGE INT,
+CONSTRAINT PRIMARY KEY (stuID, stuAGE)
+);
+```
+
 #### REMOVE CONSTRAINTS (Multiple Ways)
 ```sql
 SHOW INDEX FROM school;
