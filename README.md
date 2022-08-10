@@ -186,18 +186,32 @@ ALTER TABLE students DROP email;
 	<li><strong>INDEX:</strong> To speed up the querying process</li>
 </ul>
 
-
+### NOT NULL, UNIQUE, PRIMARY KEY
 ```sql
 CREATE TABLE codanians(
 stuID INT,
 stuNAME VARCHAR(100) UNIQUE,
-stuAGE INT NOT NULL,
+stuAGE INT NOT NULL DEFAULT 0,
 PRIMARY KEY (stuID)
 );
 ```
 
 ```sql
 INSERT INTO codanians(stuID, stuNAME, stuAGE) VALUES (01, "Arslan", 30),(02, "Ali", 27),(03, "Sunila", 24);
+```
+
+## DEFAULT
+```sql
+CREATE TABLE school(
+stuID INT,
+stuNAME VARCHAR(100),
+stuAGE INT DEFAULT 0,
+UNIQUE (stuID, stuAGE)
+);
+```
+
+```sql
+INSERT INTO school(stuID, stuNAME, stuAGE) VALUES (01, "Arslan", 30),(02, "Ali", 27),(03, "Sunila", DEFAULT);
 ```
 
 ## Order By (Sort)
