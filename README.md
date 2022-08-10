@@ -1,8 +1,3 @@
-# Basic Hierarchy in MySQL
-![1_General-Hierarchy-in-MySQL](https://user-images.githubusercontent.com/43797457/183727022-69132ed9-5ac3-4408-9a51-2d19fed0459f.jpg)
-![2_Example-Hierarchy-in-MySQL](https://user-images.githubusercontent.com/43797457/183727195-7ceeca38-fbc0-4e0c-8854-7d724c53970b.jpg)
-![3_Explain-Hierarchy-in-MySQL](https://user-images.githubusercontent.com/43797457/183727238-fddd2c74-68e7-4208-8539-6cb4bdb6470f.jpg)
-
 # SQL Commands with MySQL
 
 > SQL commands to interact with a MySQL database on Windows
@@ -55,7 +50,6 @@ DROP USER 'someuser'@'localhost';
 ```sql
 exit;
 ```
-![01_Users](https://user-images.githubusercontent.com/43797457/183727365-812b60ce-e05b-4e1b-9beb-f3c51fdfc99f.png)
 
 ## Show Databases
 
@@ -66,42 +60,36 @@ SHOW DATABASES
 ## Create Database
 
 ```sql
-CREATE DATABASE kas;
+CREATE DATABASE codanics;
 ```
 
 ## Delete Database
 
 ```sql
-DROP DATABASE kas;
+DROP DATABASE codanics;
 ```
 
 ## Select Database
 
 ```sql
-USE kas;
+USE codanics;
 ```
 
 ## Create Table
 
 ```sql
-CREATE TABLE users(
-id INT AUTO_INCREMENT,
-   first_name VARCHAR(100),
-   last_name VARCHAR(100),
-   email VARCHAR(50),
-   password VARCHAR(20),
-   location VARCHAR(100),
-   dept VARCHAR(100),
-   is_admin TINYINT(1),
-   register_date DATETIME,
-   PRIMARY KEY(id)
+CREATE TABLE students(
+   stuID int,
+   stuNAME VARCHAR(100),
+   stuAGE VARCHAR(100),
+   stuCITY VARCHAR(50)
 );
 ```
 
 ## Delete / Drop Table
 
 ```sql
-DROP TABLE tablename;
+DROP TABLE students;
 ```
 
 ## Show Tables
@@ -109,18 +97,23 @@ DROP TABLE tablename;
 ```sql
 SHOW TABLES;
 ```
-![02_Database-and-Tables](https://user-images.githubusercontent.com/43797457/183727372-830a7d5a-db9d-405d-b347-fbcfa670f148.png)
+
+## Describe Tables
+
+```sql
+DESC students;
+```
 
 ## Insert Row / Record
 
 ```sql
-INSERT INTO users (first_name, last_name, email, password, location, dept, is_admin, register_date) values ('Minhas', 'Mazhar', 'benny@gmail.com', '123456','Lahore', 'development', 1, now());
+INSERT INTO students (stuID, stuNAME, stuAGE, stuCITY) values (01, 'Minhas', 25, 'Lahore');
 ```
 
 ## Insert Multiple Rows
 
 ```sql
-INSERT INTO users (first_name, last_name, email, password, location, dept,  is_admin, register_date) values ('Dawood', 'Shahid', 'daddu@gmail.com', '123456', 'Lahore', 'design', 0, now()), ('Sunila', 'Tahir', 'sunila@gmail.com', '123456', 'Sialkot', 'teach', 0, now()),('Muhammad', 'Sami', 'sam@yahoo.com', '123456', 'Faisalabad', 'development', 1, now()),('Zeeshan', 'Khalid', 'zeek@yahoo.com', '123456', 'Massachusetts', 'sales', 0, now()),('Sheikh', 'Hamza', 'ham@yahoo.com', '123456', 'Layyah', 'sales', 0, now());
+INSERT INTO students (stuID, stuNAME, stuAGE, stuCITY) values (02, 'Dawood', 27, 'Lahore'), (03, 'Sunila', 24, 'Sialkot'),(04, 'Sami', 25, 'Faisalabad'),(05, 'Zeeshan', 27, 'Massachusetts'),(06, 'Hamza', 25, 'Layyah');
 ```
 
 ## Select
@@ -163,7 +156,6 @@ ALTER TABLE users ADD age VARCHAR(3);
 ```sql
 ALTER TABLE users MODIFY COLUMN age INT(3);
 ```
-![03_Inserting-and-Viewing-Records](https://user-images.githubusercontent.com/43797457/183727375-17c20898-4420-4365-8168-ddd0fa25d2ee.png)
 
 ## Order By (Sort)
 
@@ -219,7 +211,6 @@ SELECT * FROM users WHERE dept IN ('design', 'sales');
 CREATE INDEX LIndex On users(location);
 DROP INDEX LIndex ON users;
 ```
-![04_Sorting-and-Filtering](https://user-images.githubusercontent.com/43797457/183727379-6fe9a5e7-b4d7-4bf7-9e5d-520b156ba388.png)
 
 ## New Table With Foreign Key (Posts)
 
@@ -275,7 +266,6 @@ CREATE TABLE comments(
 ```sql
 INSERT INTO comments(post_id, user_id, body) VALUES (1, 3, 'This is comment one'),(2, 1, 'This is comment two'),(5, 3, 'This is comment three'),(2, 4, 'This is comment four'),(1, 2, 'This is comment five'),(3, 1, 'This is comment six'),(3, 2, 'This is comment six'),(5, 4, 'This is comment seven'),(2, 3, 'This is comment seven');
 ```
-![05_Foreign-Keys](https://user-images.githubusercontent.com/43797457/183727385-30926d39-38cc-47d3-b105-f093d4174ad1.png)
 
 ## Left Join
 
@@ -303,7 +293,6 @@ INNER JOIN users on users.id = comments.user_id
 ORDER BY posts.title;
 
 ```
-![06_Joins](https://user-images.githubusercontent.com/43797457/183727389-7f6399e8-ed77-43c8-a951-e22465751cf7.png)
 
 ## Aggregate Functions
 
@@ -324,4 +313,3 @@ SELECT age, COUNT(age) FROM users WHERE age > 20 GROUP BY age;
 SELECT age, COUNT(age) FROM users GROUP BY age HAVING count(age) >=2;
 
 ```
-![07_Aggregate-and-Group-By](https://user-images.githubusercontent.com/43797457/183727393-e677bb8d-699c-4272-8729-ce8aadbbf4a5.png)
