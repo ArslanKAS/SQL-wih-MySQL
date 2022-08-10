@@ -119,42 +119,47 @@ INSERT INTO students (stuID, stuNAME, stuAGE, stuCITY) values (02, 'Dawood', 27,
 ## Select
 
 ```sql
-SELECT * FROM users;
-SELECT first_name, last_name FROM users;
+SELECT * FROM students;
+SELECT stuNAME, stuCITY FROM students;
 ```
 
 ## Where Clause
 
 ```sql
-SELECT * FROM users WHERE location='Lahore';
-SELECT * FROM users WHERE location='Massachusetts' AND dept='sales';
-SELECT * FROM users WHERE is_admin = 1;
-SELECT * FROM users WHERE is_admin > 0;
+SELECT * FROM students WHERE stuCITY ='Faisalabad';
+SELECT stuNAME, stuCITY FROM students WHERE stuAGE > 25;
+SELECT * FROM students WHERE stuAGE = 25;
 ```
 
 ## Delete Row
 
 ```sql
-DELETE FROM users WHERE id = 6;
+DELETE FROM students WHERE stuID = 5;
 ```
 
 ## Update Row
 
 ```sql
-UPDATE users SET email = 'david@gmail.com' WHERE id = 2;
+UPDATE students SET stuAGE = 30 WHERE stuID = 01;
 
 ```
 
 ## Add New Column
 
 ```sql
-ALTER TABLE users ADD age VARCHAR(3);
+ALTER TABLE students ADD stuCOUNTRY TEXT;
 ```
 
 ## Modify Column
 
 ```sql
-ALTER TABLE users MODIFY COLUMN age INT(3);
+ALTER TABLE students MODIFY COLUMN stuCOUNTRY VARCHAR(20);
+```
+
+## Add Record in New Column
+
+```sql
+UPDATE students SET stuCOUNTRY = "Pakistan" WHERE stuAGE < 27;
 ```
 
 ## Order By (Sort)
