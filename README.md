@@ -176,13 +176,15 @@ ALTER TABLE students DROP email;
 ```
 
 ## CONSTRAINTS
-### NOT NULL
-### UNIQUE
-### PRIMARY KEY
-### FOREIGN KEY
-### CHECK
-### DEFAULT
-### INDEX
+<ul>
+	<li><strong>NOT NULL:</strong> Doesn't accept a NULL value</li>
+	<li><strong>UNIQUE:</strong> Doesn't accept a duplicate</li>
+        <li><strong>PRIMARY KEY:</strong> The key by which a Table forms relation with another Table. Its NOT NULL and UNIQUE</li>
+	<li><strong>FOREIGN KEY:</strong> When PRIMARY KEY of a Table is introduced in another Table it becomes FOREIGN KEY</li>
+	<li><strong>CHECK:</strong> Apply conditional statements such as < > = <= >= </li>
+	<li><strong>DEFAULT:</strong> The default value for the field when a value isn't present</li>
+	<li><strong>INDEX:</strong> To speed up the querying process</li>
+</ul>
 
 
 ```sql
