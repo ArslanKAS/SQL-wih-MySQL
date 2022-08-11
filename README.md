@@ -371,6 +371,36 @@ FROM customers
 -- WHERE city = "paris"
 ORDER BY customerName;
 ```
+
+## WHERE Clause
+### Comparion Operators
+<ul>
+	<li>=</li>
+	<li>!=</li>
+	<li><></li>
+	<li>></li>
+	<li><</li>
+	<li>>=</li>
+	<li><=</li>
+</ul>
+
+```sql
+SELECT * FROM customers
+WHERE city = "Singapore";
+```
+```sql
+SELECT * FROM customers
+WHERE city != "Singapore";
+```
+```sql
+SELECT * FROM customers
+WHERE city <> "Singapore"
+AND contactLastName = "Schmitt";
+```
+```sql
+SELECT * FROM customers
+WHERE creditLimit > 112500;
+```
 ## Order By (Sort)
 
 ```sql
