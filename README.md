@@ -323,6 +323,16 @@ PRIMARY KEY (stuID)
 ```
 ```sql
 INSERT INTO punjab_uni(stuNAME, stuAGE, stuCITY) VALUES ("Minhas", 30, "LHR"),("Dawood", 27, "LYH"),("Sunila", 24, "SIA"),("Sami", 25, "FSD"), ("Zeeshan", 27, "UK"), ("Hamza", 25, "FSD");
+
+```
+## Reset Auto-Increment (If we delete some records)
+```sql
+DELETE FROM punjab_uni WHERE stuID = 3;
+```
+```sql
+SET @num := 0;
+UPDATE punjab_uni SET stuID = @num := (@num+1);
+ALTER TABLE punjab_uni AUTO_INCREMENT =1;
 ```
 
 ## Order By (Sort)
