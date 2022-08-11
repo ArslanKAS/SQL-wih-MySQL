@@ -334,7 +334,20 @@ SET @num := 0;
 UPDATE punjab_uni SET stuID = @num := (@num+1);
 ALTER TABLE punjab_uni AUTO_INCREMENT =1;
 ```
-
+## SELECT Clause
+We will use the sample database from here: https://www.mysqltutorial.org/mysql-sample-database.aspx
+#### Select Database
+```sql
+USE classicmodels; 
+```
+#### Select all Columns of Customers Table
+```sql
+SELECT * FROM customers; 
+```
+#### Select only customer name column from Customers Table
+```sql
+SELECT customerName FROM customers;
+```
 ## Order By (Sort)
 
 ```sql
