@@ -348,6 +348,21 @@ SELECT * FROM customers;
 ```sql
 SELECT customerName FROM customers;
 ```
+#### Select only customer name along with Phone number from Customers Table
+```sql
+SELECT customerName, phone FROM customers;
+```
+#### Select multiple columns from Customers Table
+```sql
+SELECT customerName, phone, city, state FROM customers;
+```
+#### Using multiple clauses at the same time
+```sql
+SELECT customerName, phone, city, state 
+FROM customers
+WHERE city = "paris"
+ORDER BY customerName;
+```
 ## Order By (Sort)
 
 ```sql
