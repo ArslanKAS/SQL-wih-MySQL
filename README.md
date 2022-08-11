@@ -401,6 +401,13 @@ AND contactLastName = "Schmitt";
 SELECT * FROM customers
 WHERE creditLimit > 112500;
 ```
+```sql
+SELECT * from products
+WHERE MSRP > 120;
+```
+
+
+
 ## Order By (Sort)
 
 ```sql
