@@ -224,7 +224,7 @@ INSERT INTO school(stuID, stuNAME, stuAGE) VALUES (01, "Arslan", 30),(02, "Ali",
 INSERT INTO school(stuID, stuNAME, stuAGE, stuCITY) VALUES (01, "Arslan", 30, "Lahore"),(02, "Ali", 27, "Islamabad"),(03, "Sunila", 24, DEFAULT);
 ```
 
-#### ASSIGN CONSTRAINT USING ALTER TABLE (Multiple Ways)
+#### Assign CONSTRAINT Using ALTER TABLE (Multiple Ways)
 ```sql
 ALTER TABLE school MODIFY stuAGE INT NOT NULL;
 ```
@@ -242,7 +242,7 @@ PRIMARY KEY (stuID, stuAGE)
 );
 ```
 
-#### ASSIGN CONSTRAINTS (Another Method)
+#### Assign CONSTRAINTS (Another Method)
 ```sql
 CREATE TABLE school(
 stuID INT,
@@ -252,7 +252,7 @@ CONSTRAINT PRIMARY KEY (stuID, stuAGE)
 );
 ```
 
-#### REMOVE CONSTRAINTS (Multiple Ways)
+#### Remove CONSTRAINTS (Multiple Ways)
 ```sql
 SHOW INDEX FROM school;
 ```
@@ -292,7 +292,7 @@ CHECK (stuAGE >= 18)
 );
 ```
 
-#### CHECK ON MULTIPLE COLUMNS
+#### CHECK On Multiple Columns
 ```sql
 CREATE TABLE punjab_uni(
 stuID INT,
@@ -308,6 +308,21 @@ CHECK (stuAGE >= 18 AND stuCITY IN ("FAISALBAD","LAHORE","SARGODHA"))
 ```sql
 CREATE INDEX uni_index ON punjab_uni (stuID);
 SHOW INDEX FROM punjab_uni;
+```
+
+## Auto-Increment
+
+```sql
+CREATE TABLE punjab_uni(
+stuID INT AUTO_INCREMENT,
+stuNAME VARCHAR(100),
+stuAGE INT,
+stuCITY VARCHAR(100),
+PRIMARY KEY (stuID)
+);
+```
+```sql
+INSERT INTO punjab_uni(stuNAME, stuAGE, stuCITY) VALUES ("Minhas", 30, "LHR"),("Dawood", 27, "LYH"),("Sunila", 24, "SIA"),("Sami", 25, "FSD"), ("Zeeshan", 27, "UK"), ("Hamza", 25, "FSD");
 ```
 
 ## Order By (Sort)
