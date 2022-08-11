@@ -363,6 +363,14 @@ FROM customers
 WHERE city = "paris"
 ORDER BY customerName;
 ```
+
+#### Commenting (Disabling) a clause
+```sql
+SELECT customerName, phone, city, state 
+FROM customers
+-- WHERE city = "paris"
+ORDER BY customerName;
+```
 ## Order By (Sort)
 
 ```sql
