@@ -425,7 +425,14 @@ SELECT productName,
         (MSRP + 10) * 1.2 AS MSRP_adjusted
 FROM products;
 ```
-
+#### Increasing MSRP column and assigning Alias
+```sql
+SELECT productName, productCode, buyPrice, MSRP,
+	(110/100)*MSRP AS "MSRP 10%",
+        (120/100)*MSRP AS "MSRP 20%",
+        (100.5/100)*MSRP AS "MSRP 0.5%"
+FROM products;
+```
 
 ## Order By (Sort)
 
