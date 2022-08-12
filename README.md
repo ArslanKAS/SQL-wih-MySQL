@@ -406,6 +406,25 @@ SELECT * from products
 WHERE MSRP > 120;
 ```
 
+## Data Manipulation
+#### Arithmetic operations on columns
+```sql
+SELECT productName,
+		productCode,
+        buyPrice,
+        MSRP,
+        (MSRP + 10) * 1.2
+FROM products;
+```
+#### Assigning Alias to a column
+```sql
+SELECT productName,
+		productCode,
+        buyPrice,
+        MSRP,
+        (MSRP + 10) * 1.2 AS MSRP_adjusted
+FROM products;
+```
 
 
 ## Order By (Sort)
