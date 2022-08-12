@@ -337,7 +337,7 @@ SET @num := 0;
 UPDATE punjab_uni SET stuID = @num := (@num+1);
 ALTER TABLE punjab_uni AUTO_INCREMENT =1;
 ```
-## SELECT Clause
+## SELECT Clause (Advanced)
 We will use the sample database from here: https://www.mysqltutorial.org/mysql-sample-database.aspx
 #### Select Database
 ```sql
@@ -359,7 +359,7 @@ SELECT customerName, phone FROM customers;
 ```sql
 SELECT customerName, phone, city, state FROM customers;
 ```
-#### Using multiple clauses at the same time
+#### Using multiple Clauses at the same time
 ```sql
 SELECT customerName, phone, city, state 
 FROM customers
@@ -367,7 +367,7 @@ WHERE city = "paris"
 ORDER BY customerName;
 ```
 
-#### Commenting (Disabling) a clause
+#### Commenting (Disabling) a Clause
 ```sql
 SELECT customerName, phone, city, state 
 FROM customers
@@ -375,7 +375,7 @@ FROM customers
 ORDER BY customerName;
 ```
 
-## WHERE Clause
+## WHERE Clause (Advanced)
 ### Comparion Operators
 <ul>
 	<li>=</li>
@@ -408,10 +408,23 @@ WHERE creditLimit > 112500;
 SELECT * FROM products
 WHERE MSRP > 120;
 ```
-## Distinct clause
+## DISTINCT Clause
 ```sql
 SELECT DISTINCT productLine
 FROM products;
+```
+
+## GROUP BY Clause
+```sql
+SELECT * FROM products
+GROUP BY productLine;
+```
+
+## ORDER BY Clause (Sort)
+
+```sql
+SELECT * FROM employees ORDER BY firstName ASC;
+SELECT * FROM employees ORDER BY firstName DESC;
 ```
 
 ## Data Manipulation
@@ -441,7 +454,13 @@ SELECT productName, productCode, buyPrice, MSRP,
         (100.5/100)*MSRP AS "MSRP 0.5%"
 FROM products;
 ```
-## Logical opeartors and conditional clauses
+#### Concatenate Columns
+
+```sql
+SELECT CONCAT(firstName, ' ', lastName) AS 'Full Name', employeeNumber FROM employees;
+```
+
+## Logical opeartors and conditional Clauses
 ### Logical Operators
 <ul>
 	<li>AND</li>
@@ -475,17 +494,17 @@ OR productLine = "Trucks and Buses";
 	<li>LIKE</li>
 </ul>
 
-#### IN clause (Choices)
+#### IN Clause (Choices)
 ```sql
 SELECT * FROM products
 WHERE productLine IN ("Motorcycles", "Classic cars", "Trucks and Buses");
 ```
-#### Using NOT to reverse the IN clause
+#### Using NOT to reverse the IN Clause
 ```sql
 SELECT * FROM products
 WHERE productLine NOT IN ("Motorcycles", "Classic cars", "Trucks and Buses");
 ```
-#### BETWEEN clause (Range)
+#### BETWEEN Clause (Range)
 ```sql
 SELECT * FROM products
 WHERE quantityInStock BETWEEN 100 AND 600;
@@ -494,34 +513,16 @@ WHERE quantityInStock BETWEEN 100 AND 600;
 SELECT * FROM products
 WHERE buyPrice BETWEEN 33 AND 100;
 ```
-
-## Order By (Sort)
-
+#### LIKE clause (Searching)
 ```sql
-SELECT * FROM users ORDER BY last_name ASC;
-SELECT * FROM users ORDER BY last_name DESC;
+SELECT * FROM products WHERE productLine LIKE 't%';
+SELECT * FROM products WHERE productLine LIKE 'trai%';
+SELECT * FROM products WHERE productLine LIKE '%cars';
+SELECT * FROM products WHERE productLine LIKE '%cyc%';
 ```
-
-## Concatenate Columns
-
+#### NOT on LIKE Clause
 ```sql
-SELECT CONCAT(first_name, ' ', last_name) AS 'Name', dept FROM users;
-
-```
-
-## Like (Searching)
-
-```sql
-SELECT * FROM users WHERE dept LIKE 'd%';
-SELECT * FROM users WHERE dept LIKE 'dev%';
-SELECT * FROM users WHERE dept LIKE '%t';
-SELECT * FROM users WHERE dept LIKE '%e%';
-```
-
-## Not Like
-
-```sql
-SELECT * FROM users WHERE dept NOT LIKE 'd%';
+SELECT * FROM products WHERE productLine NOT LIKE 't%';
 ```
 
 ## New Table With Foreign Key (Posts)
