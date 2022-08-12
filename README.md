@@ -405,6 +405,11 @@ WHERE creditLimit > 112500;
 SELECT * FROM products
 WHERE MSRP > 120;
 ```
+## Distinct clause
+```sql
+SELECT DISTINCT productLine
+FROM products;
+```
 
 ## Data Manipulation
 #### Arithmetic operations on columns
@@ -467,7 +472,7 @@ OR productLine = "Trucks and Buses";
 	<li>LIKE</li>
 </ul>
 
-#### IN clause
+#### IN clause (Choices)
 ```sql
 SELECT * FROM products
 WHERE productLine IN ("Motorcycles", "Classic cars", "Trucks and Buses");
@@ -477,10 +482,14 @@ WHERE productLine IN ("Motorcycles", "Classic cars", "Trucks and Buses");
 SELECT * FROM products
 WHERE productLine NOT IN ("Motorcycles", "Classic cars", "Trucks and Buses");
 ```
-#### BETWEEN clause
+#### BETWEEN clause (Range)
 ```sql
 SELECT * FROM products
 WHERE quantityInStock BETWEEN 100 AND 600;
+```
+```sql
+SELECT * FROM products
+WHERE buyPrice BETWEEN 33 AND 100;
 ```
 
 ## Order By (Sort)
@@ -497,19 +506,6 @@ SELECT CONCAT(first_name, ' ', last_name) AS 'Name', dept FROM users;
 
 ```
 
-## Select Distinct Rows
-
-```sql
-SELECT DISTINCT location FROM users;
-
-```
-
-## Between (Select Range)
-
-```sql
-SELECT * FROM users WHERE age BETWEEN 20 AND 25;
-```
-
 ## Like (Searching)
 
 ```sql
@@ -523,12 +519,6 @@ SELECT * FROM users WHERE dept LIKE '%e%';
 
 ```sql
 SELECT * FROM users WHERE dept NOT LIKE 'd%';
-```
-
-## IN
-
-```sql
-SELECT * FROM users WHERE dept IN ('design', 'sales');
 ```
 
 ## Create & Remove Index
