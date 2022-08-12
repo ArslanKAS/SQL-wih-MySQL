@@ -410,7 +410,7 @@ WHERE MSRP > 120;
 #### Arithmetic operations on columns
 ```sql
 SELECT productName,
-		productCode,
+	productCode,
         buyPrice,
         MSRP,
         (MSRP + 10) * 1.2
@@ -419,7 +419,7 @@ FROM products;
 #### Assigning Alias to a column
 ```sql
 SELECT productName,
-		productCode,
+	productCode,
         buyPrice,
         MSRP,
         (MSRP + 10) * 1.2 AS MSRP_adjusted
