@@ -433,6 +433,14 @@ SELECT productName, productCode, buyPrice, MSRP,
         (100.5/100)*MSRP AS "MSRP 0.5%"
 FROM products;
 ```
+## Logical opeartors and conditional clauses
+### Logical Operators
+<ul>
+	<li>AND</li>
+	<li>OR</li>
+	<li>NOT</li>
+</ul>
+
 #### Using AND and OR logical operators
 ```sql
 SELECT * FROM products
@@ -452,10 +460,22 @@ WHERE productLine = "Motorcycles"
 OR productLine = "Classic cars"
 OR productLine = "Trucks and Buses";
 ```
-#### Using IN operator instead of multiple OR operators for a single column
+### Conditional Clauses
+<ul>
+	<li>IN</li>
+	<li>BETWEEN</li>
+	<li>LIKE</li>
+</ul>
+
+#### Using IN clause instead of multiple OR operators for a single column
 ```sql
 SELECT * FROM products
 WHERE productLine IN ("Motorcycles", "Classic cars", "Trucks and Buses");
+```
+#### Using NOT to reverse the IN clause
+```sql
+SELECT * FROM products
+WHERE productLine NOT IN ("Motorcycles", "Classic cars", "Trucks and Buses");
 ```
 
 ## Order By (Sort)
