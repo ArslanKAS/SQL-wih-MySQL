@@ -309,6 +309,9 @@ CHECK (stuAGE >= 18 AND stuCITY IN ("FAISALBAD","LAHORE","SARGODHA"))
 CREATE INDEX uni_index ON punjab_uni (stuID);
 SHOW INDEX FROM punjab_uni;
 ```
+```sql
+DROP INDEX uni_index ON punjab_uni;
+```
 
 ## Auto-Increment
 
@@ -519,13 +522,6 @@ SELECT * FROM users WHERE dept LIKE '%e%';
 
 ```sql
 SELECT * FROM users WHERE dept NOT LIKE 'd%';
-```
-
-## Create & Remove Index
-
-```sql
-CREATE INDEX LIndex On users(location);
-DROP INDEX LIndex ON users;
 ```
 
 ## New Table With Foreign Key (Posts)
