@@ -441,19 +441,19 @@ FROM products;
 	<li>NOT</li>
 </ul>
 
-#### Using AND and OR logical operators
+#### AND and OR logical operators
 ```sql
 SELECT * FROM products
 WHERE productLine = "Motorcycles"
 OR (buyPrice > 65 AND MSRP > 100);
 ```
-#### Using NOT to reverse the conditions
+#### NOT operator to reverse the conditions
 ```sql
 SELECT * FROM products
 WHERE productLine = "Motorcycles"
 AND NOT buyPrice > 65 AND NOT MSRP > 100;
 ```
-#### Using multiple OR operators
+#### Multiple OR operators
 ```sql
 SELECT * FROM products
 WHERE productLine = "Motorcycles"
@@ -467,7 +467,7 @@ OR productLine = "Trucks and Buses";
 	<li>LIKE</li>
 </ul>
 
-#### Using IN clause instead of multiple OR operators for a single column
+#### IN clause
 ```sql
 SELECT * FROM products
 WHERE productLine IN ("Motorcycles", "Classic cars", "Trucks and Buses");
@@ -476,6 +476,11 @@ WHERE productLine IN ("Motorcycles", "Classic cars", "Trucks and Buses");
 ```sql
 SELECT * FROM products
 WHERE productLine NOT IN ("Motorcycles", "Classic cars", "Trucks and Buses");
+```
+#### BETWEEN clause
+```sql
+SELECT * FROM products
+WHERE quantityInStock BETWEEN 100 AND 600;
 ```
 
 ## Order By (Sort)
