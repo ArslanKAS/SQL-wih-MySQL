@@ -433,6 +433,19 @@ SELECT productName, productCode, buyPrice, MSRP,
         (100.5/100)*MSRP AS "MSRP 0.5%"
 FROM products;
 ```
+#### Using AND and OR logical operators
+```sql
+SELECT * from products
+WHERE productLine = "Motorcycles"
+OR (buyPrice > 65 AND MSRP > 100);
+```
+#### Using NOT to reverse the conditions
+```sql
+SELECT * from products
+WHERE productLine = "Motorcycles"
+AND NOT buyPrice > 65 AND NOT MSRP > 100;
+```
+
 
 ## Order By (Sort)
 
