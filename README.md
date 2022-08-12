@@ -402,7 +402,7 @@ SELECT * FROM customers
 WHERE creditLimit > 112500;
 ```
 ```sql
-SELECT * from products
+SELECT * FROM products
 WHERE MSRP > 120;
 ```
 
@@ -435,17 +435,28 @@ FROM products;
 ```
 #### Using AND and OR logical operators
 ```sql
-SELECT * from products
+SELECT * FROM products
 WHERE productLine = "Motorcycles"
 OR (buyPrice > 65 AND MSRP > 100);
 ```
 #### Using NOT to reverse the conditions
 ```sql
-SELECT * from products
+SELECT * FROM products
 WHERE productLine = "Motorcycles"
 AND NOT buyPrice > 65 AND NOT MSRP > 100;
 ```
-
+#### Using multiple OR operators
+```sql
+SELECT * FROM products
+WHERE productLine = "Motorcycles"
+OR productLine = "Classic cars"
+OR productLine = "Trucks and Buses";
+```
+#### Using IN operator instead of multiple OR operators for a single column
+```sql
+SELECT * FROM products
+WHERE productLine IN ("Motorcycles", "Classic cars", "Trucks and Buses");
+```
 
 ## Order By (Sort)
 
