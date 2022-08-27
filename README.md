@@ -626,3 +626,25 @@ SELECT age, COUNT(age) FROM users WHERE age > 20 GROUP BY age;
 SELECT age, COUNT(age) FROM users GROUP BY age HAVING count(age) >=2;
 
 ```
+
+## MySQL in VSCode
+
+```python
+import mysql.connector
+conn = mysql.connector.connect(
+    host= "127.0.0.1",
+    database="classicmodels",
+    user="root",
+    password="******" )
+
+cursor = conn.cursor()
+cursor.execute("SELECT contactFirstName FROM customers")
+
+first_name = []
+for row in cursor:
+    first_name.append(row)
+print(first_name[0:5])
+
+cursor.close()
+```
+![MySQL with Python in VSC](https://user-images.githubusercontent.com/43797457/187010790-7b481398-73ee-437a-81d9-d39600b70eab.jpg)
